@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_trips"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textSize="25sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/bar1"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/barback"
+        android:layout_marginStart="15dp"
+        android:elevation="10dp"
+        android:outlineAmbientShadowColor="@color/black"
+        android:layout_marginEnd="15dp">
+
+        <TextView
+            android:id="@+id/upcoming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#545252"
+            android:layout_marginStart="30dp"
+            android:text="Upcoming"/>
+
+        <TextView
+            android:id="@+id/finished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#545252"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:text="Finished"/>
+
+        <TextView
+            android:id="@+id/fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginEnd="30dp"
+            android:textColor="#545252"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:text="Favourites"/>
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:fillViewport="false"
+        android:layout_below="@+id/bar1"
+        android:layout_above="@+id/bar2">
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:outlineSpotShadowColor="@color/black"
+            android:layout_margin="10dp">
+            <include layout="@layout/template"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bar2"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:weightSum="4"
+        android:background="@drawable/barback2"
+        android:elevation="5dp"
+        android:outlineSpotShadowColor="@color/black"
+        >
+
+        <RelativeLayout
+            android:id="@+id/home1"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/img1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="9dp"
+                android:background="@drawable/ic_home"/>
+
+            <TextView
+                android:layout_below="@+id/img1"
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#545252"
+                android:text="Home"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/explore1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/img2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/ic_explore"/>
+
+            <TextView
+                android:layout_below="@+id/img2"
+                android:id="@+id/explore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#545252"
+                android:text="Explore"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Tours"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/img3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/ic_trip"/>
+
+            <TextView
+                android:layout_below="@+id/img3"
+                android:id="@+id/trips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#545252"
+                android:text="Trips"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/profile1"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/img4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/ic_profile"/>
+
+            <TextView
+                android:layout_below="@+id/img4"
+                android:id="@+id/profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#545252"
+                android:text="Profile"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
